@@ -14,7 +14,11 @@
 		302D95F114D2391D003F00A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D95EF14D2391D003F00A1 /* MainViewController.m */; };
 		302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302D95F014D2391D003F00A1 /* MainViewController.xib */; };
 		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
-		B7DF42611EDC49A5B037AEEF /* QRScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A1F41705344A0ABB50A6DA /* QRScanner.swift */; };
+		23F53C396367494E9DDD9D86 /* CDVBarcodeScanner.mm in Resources */ = {isa = PBXBuildFile; fileRef = 0595D8C52A3D4D8780317178 /* CDVBarcodeScanner.mm */; };
+		72555877780643CA92AE8766 /* scannerOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB367A1F16C24913AA56D27E /* scannerOverlay.xib */; };
+		E721ACD23AA747DE8AA626A2 /* CDVBarcodeScanner.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0522DD54D6E54A67977AD2FC /* CDVBarcodeScanner.bundle */; };
+		B3AF675874934636A7EF6B38 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83A5C25102C4BBF9B10B3D0 /* AVFoundation.framework */; };
+		3D77E1C5A8594496BB74B712 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B9BD9C143242B8B0AA5F5B /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +66,11 @@
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "HelloCordova/config.xml"; sourceTree = "<group>"; };
-		12A1F41705344A0ABB50A6DA /* QRScanner.swift */ = {isa = PBXFileReference; name = "QRScanner.swift"; path = "cordova-plugin-qrscanner/QRScanner.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
+		0595D8C52A3D4D8780317178 /* CDVBarcodeScanner.mm */ = {isa = PBXFileReference; name = "CDVBarcodeScanner.mm"; path = "phonegap-plugin-barcodescanner/CDVBarcodeScanner.mm"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CB367A1F16C24913AA56D27E /* scannerOverlay.xib */ = {isa = PBXFileReference; name = "scannerOverlay.xib"; path = "scannerOverlay.xib"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = file.xib; explicitFileType = undefined; includeInIndex = 0; };
+		0522DD54D6E54A67977AD2FC /* CDVBarcodeScanner.bundle */ = {isa = PBXFileReference; name = "CDVBarcodeScanner.bundle"; path = "CDVBarcodeScanner.bundle"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.plug-in; explicitFileType = undefined; includeInIndex = 0; };
+		C83A5C25102C4BBF9B10B3D0 /* AVFoundation.framework */ = {isa = PBXFileReference; name = "AVFoundation.framework"; path = "System/Library/Frameworks/AVFoundation.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		97B9BD9C143242B8B0AA5F5B /* AudioToolbox.framework */ = {isa = PBXFileReference; name = "AudioToolbox.framework"; path = "System/Library/Frameworks/AudioToolbox.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
+				B3AF675874934636A7EF6B38 /* AVFoundation.framework in Frameworks */,
+				3D77E1C5A8594496BB74B712 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +143,8 @@
 				3047A50E1AB8057F00498E2A /* config */,
 				8D1107310486CEB800E47090 /* HelloCordova-Info.plist */,
 				6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */,
+				CB367A1F16C24913AA56D27E /* scannerOverlay.xib */,
+				0522DD54D6E54A67977AD2FC /* CDVBarcodeScanner.bundle */,
 			);
 			name = Resources;
 			path = "HelloCordova/Resources";
@@ -141,6 +153,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C83A5C25102C4BBF9B10B3D0 /* AVFoundation.framework */,
+				97B9BD9C143242B8B0AA5F5B /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -167,7 +181,7 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				12A1F41705344A0ABB50A6DA /* QRScanner.swift */,
+				0595D8C52A3D4D8780317178 /* CDVBarcodeScanner.mm */,
 			);
 			name = Plugins;
 			path = "HelloCordova/Plugins";
@@ -261,6 +275,8 @@
 				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
 				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
+				72555877780643CA92AE8766 /* scannerOverlay.xib in Resources */,
+				E721ACD23AA747DE8AA626A2 /* CDVBarcodeScanner.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +308,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
-				B7DF42611EDC49A5B037AEEF /* QRScanner.swift in Sources */,
+				23F53C396367494E9DDD9D86 /* CDVBarcodeScanner.mm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,7 +347,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/Bridging-Header.h";
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -358,7 +374,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/Bridging-Header.h";
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5;
 			};
 			name = Release;
 		};
@@ -404,7 +420,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.cordova.hellocordova;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/Bridging-Header.h";
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -449,7 +465,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.cordova.hellocordova;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/Bridging-Header.h";
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5;
 			};
 			name = Release;
 		};

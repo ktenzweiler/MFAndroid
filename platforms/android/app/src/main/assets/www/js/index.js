@@ -34,34 +34,32 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         document.getElementById('camera').addEventListener( "click", () => {
-            document.getElementById('body').setAttribute('style','background-color:transparent;')
-            hidePage('page1')
-            QRScanner.prepare(onDone); // show the prompt
-                function onDone(err, status){
-                    if (err) {                
-                        console.error(err);
+                //hidePage('page1')
+                cordova.plugins.barcodeScanner.scan(
+                    function (result) {
+                        alert("We got a barcode\n" +
+                              "Result: " + result.text + "\n" +
+                              "Format: " + result.format + "\n" +
+                              "Cancelled: " + result.cancelled);
+                    },
+                    function (error) {
+                        alert("Scanning failed: " + error);
+                    },
+                    {
+                        preferFrontCamera : false, // iOS and Android
+                        showFlipCameraButton : false, // iOS and Android
+                        showTorchButton : false, // iOS and Android
+                        torchOn: false, // Android, launch with the torch switched on (if available)
+                        saveHistory: true, // Android, save scan history (default false)
+                        prompt : "Place a barcode inside the scan area", // Android
+                        resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
+                        formats : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
+                        orientation : "portrait", // Android only (portrait|landscape), default unset so it rotates with the device
+                        disableAnimations : false, // iOS
+                        disableSuccessBeep: true // iOS and Android
                     }
-                    if (status.authorized) {
-                        function displayContents(err, text){
-                            if(err){
-                                alert('received event')
-                                // an error occurred, or the scan was canceled (error code `6`)
-                            } else {
-                                // The scan completed, display the contents of the QR code:
-                                document.getElementById('body').setAttribute('style','background-color:#252525;')
-                                showPage('page1')
-                                alert(text);
-                            }
-                        }
-                        QRScanner.scan(displayContents);
-                        QRScanner.show()
-                    } else if (status.denied) {
-                        QRScanner.openSettings()
-                    } else {
-                        QRScanner.openSettings()
-                    }
-                }
-
+                 );
+                
                 // hidePage('page1');
                 // showPage('page2');
             });
